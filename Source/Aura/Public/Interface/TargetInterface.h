@@ -22,4 +22,6 @@ class AURA_API ITargetInterface
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+	virtual void HighlightTarget() = 0;
+	virtual void UnHighlightTarget() = 0;
 };

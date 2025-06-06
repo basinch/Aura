@@ -9,6 +9,7 @@
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
+class ITargetInterface;
 /**
  * 
  */
@@ -19,7 +20,7 @@ class AURA_API AAuraPlayerController : public APlayerController
 
 public:
 	AAuraPlayerController();
-	
+	virtual void Tick(float DeltaTime) override;
 protected:
 	virtual void SetupInputComponent() override;
 	virtual void BeginPlay() override;
@@ -32,4 +33,9 @@ private:
 	TObjectPtr<UInputAction> MoveAction;
 
 	void Move(const struct FInputActionValue& ActionValue);
+
+	void CursorTrace();
+
+	TScriptInterface<ITargetInterface> LastActor;
+	TScriptInterface<ITargetInterface> CurrentActor;
 };
