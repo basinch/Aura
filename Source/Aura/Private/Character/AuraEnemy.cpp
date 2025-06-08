@@ -3,7 +3,14 @@
 
 #include "Character/AuraEnemy.h"
 
+#include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "Aura/Aura.h"
+
+AAuraEnemy::AAuraEnemy()
+{
+	AbilitySystem = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystem");
+	AbilitySystem->SetIsReplicated(true);
+}
 
 void AAuraEnemy::HighlightTarget()
 {

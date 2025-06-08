@@ -15,6 +15,9 @@ class AURA_API AAuraEnemy : public ABaseAuraCharacter, public ITargetInterface
 {
 	GENERATED_BODY()
 public:
+
+	AAuraEnemy();
+	
 	virtual void HighlightTarget() override;
 	virtual void UnHighlightTarget() override;
 
